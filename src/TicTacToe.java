@@ -14,6 +14,7 @@ import java.util.Scanner;
 
 public class TicTacToe
 {
+    private TicTacToeViewer window;
     /** Board Markers **/
     public static final String X_MARKER = "X";
     public static final String O_MARKER = "O";
@@ -56,6 +57,7 @@ public class TicTacToe
         this.winner = BLANK;
         this.winIndex = -1;
         this.winDirection = -1;
+        window = new TicTacToeViewer(this);
     }
 
     /******************** Methods You May Find Helpful ********************/
@@ -269,6 +271,7 @@ public class TicTacToe
      * Prints the board to the console
      */
     private void printBoard() {
+        window.repaint();
         System.out.println("  0 1 2");
         int row = 0;
         for(Square[] array : this.board) {
